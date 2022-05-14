@@ -1,4 +1,17 @@
 # CUPON
+
+## Arq
+
+
+## Despliege local
+
+```
+./mvnw install 
+java -jar target/cupon-0.0.1-SNAPSHOT.jar
+
+curl -x POST http://localhost:8080/beneficio/coupon
+```
+
 # /beneficio/coupon
 
 
