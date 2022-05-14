@@ -1,7 +1,7 @@
 # CUPON
 # /beneficio/coupon
 
-#########################################################################################################
+
 ### POST /beneficio/coupon
 
 Esta solicitud se encarga de  maximisar el beneficio para un usuario retornando la mayor
@@ -13,7 +13,7 @@ no superan el valor indicado respondiendo de la siguiente manera
 	"item_ids": ["MLA811601010", "MLA2"],
 	"total":5003
    }
-]git remote add origin git@github.com:javiersolarte/cliente-cupon.git
+]
 ```
 En caso de que el monto no sea suficiente como para comprar
 mínimamente un item devolver un error 404-NOT_FOUND.
@@ -27,4 +27,4 @@ Si no encunetra resultados retorna una lista vacía
 |`200`|||Exitoso|
 |`404`|||Error no encontro items para retornar|
 
-#########################################################################################################
+
