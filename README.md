@@ -1,6 +1,14 @@
 # CUPON
 
-## Arq
+## Arquitectura 
+El proyecto está estructurado en tres capas 
+Rest web:  donde se construye y  expone el servicio beneficio/coupon
+
+Ejb: dónde está implementado la lógica de negocio correspondiente a dicho servicio 
+ 
+Dao: dónde están el acceso a datos en este caso la invocación  al servicio externo 
+https://api.mercadolibre.com/items/$ITEM_ID1 para consultar el precio de los ítems
+enviados 
 
 
 ## Despliege local
