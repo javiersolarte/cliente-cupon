@@ -5,7 +5,7 @@ import com.mercadolibre.cupon.util.RespuestaExcepcion;
 
 public interface BeneficioBO {
 	/**
-	 * serivicio uqe maximisa el beneficio para un usuraio retornando la mayor
+	 * serivicio que maximisa el beneficio para un usuraio retornando la mayor
 	 * cantida de items que puede recibir como beneficio en determinado cupon y que
 	 * no superan el valor indicado
 	 *

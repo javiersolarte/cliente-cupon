@@ -6,6 +6,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
@@ -27,9 +28,13 @@ public class ItemDAOImpl implements ItemDAO {
 		try {
 
 			MultiValueMap<String, String> headers = new HttpHeaders();
-			ItemPrecio precio = restTemplate.exchange(api.concat("items/{$ITEM_ID1}"), HttpMethod.GET,
+			ResponseEntity<ItemPrecio> respuesta = restTemplate.exchange(
+					api != null ? api.concat("items/{$ITEM_ID1}") : "items/{$ITEM_ID1}", HttpMethod.GET,
 					new HttpEntity(headers), new ParameterizedTypeReference<ItemPrecio>() {
-					}, item).getBody();
+					}, item);
+			if (respuesta == null)
+				return null;
+			ItemPrecio precio = respuesta.getBody();
 			return Float.valueOf(precio.getPrice());
 		} catch (RestClientException e) {
 			return null;
